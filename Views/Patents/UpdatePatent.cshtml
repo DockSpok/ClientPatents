@@ -1,0 +1,44 @@
+﻿
+@model DtoPatent
+@{
+    ViewData["Title"] = "UpdatePatent";
+    Layout = "~/Views/Shared/_patentLayout.cshtml";
+}
+
+<h2>Atualizar uma Patente <a asp-action="Index" class="btn btn-sm btn-success">Voltar</a></h2>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="PatentId"></label>
+        <input class="form-control" asp-for="PatentId" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="PatentTitle"></label>
+        <input class="form-control" asp-for="PatentTitle" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PatentNumber"></label>
+        <input class="form-control" asp-for="PatentNumber" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PatentClaims"></label>
+        <input class="form-control" asp-for="PatentClaims" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Atualizar</button>
+    </div>
+</form>
+@if (ViewBag.Result == "Sucesso")
+{
+    <h2>Patentes</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead><tr><th>Id</th><th>Título</th><th>Número</th><th>Claims</th></tr></thead>
+        <tbody>
+            <tr>
+                <td>@Model.PatentId</td>
+                <td>@Model.PatentTitle</td>
+                <td>@Model.PatentNumber</td>
+                <td>@Model.PatentClaims[0]</td>
+            </tr>
+        </tbody>
+    </table>
+}
