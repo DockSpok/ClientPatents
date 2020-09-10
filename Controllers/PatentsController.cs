@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -71,7 +69,7 @@ namespace ClientPatents.Controllers
                 content.Add(new StringContent(patent.PatentId.ToString()), "PatentId");
                 content.Add(new StringContent(patent.PatentTitle), "PatentTitle");
                 content.Add(new StringContent(patent.PatentNumber), "PatentNumber");
-                content.Add(new StringContent(patent.PatentClaims[0]), "PatentClaims");
+                content.Add(new StringContent(patent.PatentClaims), "PatentClaims");
                 using (var response = await httpClient.PutAsync(apiUrl, content))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();

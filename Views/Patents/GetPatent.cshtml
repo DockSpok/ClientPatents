@@ -3,7 +3,7 @@
     ViewData["Title"] = "GetPatent";
     Layout = "~/Views/Shared/_patentLayout.cshtml";
 }
-<h2>Obter patente pelo Id neste banco<a asp-action="Index" class="btn btn-sm btn-success">Retornar</a></h2>
+<h2>Obter patente pelo Id neste banco</h2>
 <form method="post">
     <div class="form-group">
         <label for="id">Id:</label>
@@ -25,6 +25,7 @@
                 <td>@Model.PatentNumber</td>
                 <td>@Model.PatentDate</td>
             </tr>
+            <tr><td>Claims</td><td>@Model.PatentClaims</td></tr>
         </tbody>
     </table>
 }

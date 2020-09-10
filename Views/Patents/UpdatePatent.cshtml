@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_patentLayout.cshtml";
 }
 
-<h2>Atualizar uma Patente <a asp-action="Index" class="btn btn-sm btn-success">Voltar</a></h2>
+<h2>Atualizar uma Patente   <a asp-action="Index" class="btn btn-sm btn-success">Voltar</a></h2>
 <form method="post">
     <div class="form-group">
         <label asp-for="PatentId"></label>
@@ -23,7 +23,7 @@
         <label asp-for="PatentClaims"></label>
         <input class="form-control" asp-for="PatentClaims" />
     </div>
-    <div class="text-center panel-body">
+    <div class="text-left align-self-md-start">
         <button type="submit" class="btn btn-sm btn-primary">Atualizar</button>
     </div>
 </form>
@@ -37,7 +37,7 @@
                 <td>@Model.PatentId</td>
                 <td>@Model.PatentTitle</td>
                 <td>@Model.PatentNumber</td>
-                <td>@Model.PatentClaims[0]</td>
+                <td>@Model.PatentClaims</td>
             </tr>
         </tbody>
     </table>
